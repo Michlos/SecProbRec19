@@ -5,9 +5,14 @@
 }
 
 <h1>Index</h1>
-
+@{ 
+    Receive autoModel = new Receive();
+    //autoModel.MailId = 55;
+} 
 <p>
     <a asp-action="Create">Create New</a>
+    @*levando o id na unha pra teste*@|
+    @*<a asp-action="AutoCreate" asp-route-id="@autoModel.MailId">AutoCreate</a>*@
 </p>
 <table class="table">
     <thead>

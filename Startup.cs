@@ -59,6 +59,12 @@ namespace SecProbRec19
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                    name: "autoCreate",
+                    pattern: "Receives/AutoCreate/{mailId}",
+                    defaults: new { controller = "Receives", action = "AutoCreate" });
+
+
+                endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });

@@ -65,6 +65,23 @@ namespace SecProbRec19.Controllers
             return View(receive);
         }
 
+        //SET AUTOCREATE WHEN ID_MAIL BE SET IN URI
+        [HttpGet] //que doido é um get!!! by GPT
+        public async Task<IActionResult> AutoCreate(int mailId)
+        {
+            var newReceive = new Receive
+            {
+                MailId = mailId
+                //RecDate = DateTime.Now  //pode ajustar a data confoem necessário com mask and typeString
+            };
+            
+            
+                _context.Add(newReceive);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+                //return View(receive);
+        }
+
         // GET: Receives/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
