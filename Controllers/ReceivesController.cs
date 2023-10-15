@@ -19,6 +19,11 @@ namespace SecProbRec19.Controllers
             _context = context;
         }
 
+        public IActionResult ProbConclude()
+        {
+            return View();
+        }
+
         // GET: Receives
         public async Task<IActionResult> Index()
         {
@@ -78,8 +83,8 @@ namespace SecProbRec19.Controllers
             
                 _context.Add(newReceive);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-                //return View(receive);
+                return RedirectToAction(nameof(ProbConclude));
+                return View();
         }
 
         // GET: Receives/Edit/5
