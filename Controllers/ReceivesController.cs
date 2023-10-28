@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+
 using SecProbRec19.Data;
 using SecProbRec19.Models;
 
@@ -79,12 +81,13 @@ namespace SecProbRec19.Controllers
                 MailId = mailId
                 //RecDate = DateTime.Now  //pode ajustar a data confoem necessário com mask and typeString
             };
-            
-            
-                _context.Add(newReceive);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(ProbConclude));
-                return View();
+
+
+            _context.Add(newReceive);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index", "Home");
+            //return RedirectToAction(nameof(ProbConclude));
+            //return View();
         }
 
         // GET: Receives/Edit/5
