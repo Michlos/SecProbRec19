@@ -23,5 +23,6 @@ namespace SecProbRec19
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
     }
 }
