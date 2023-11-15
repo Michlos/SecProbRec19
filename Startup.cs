@@ -29,11 +29,16 @@ namespace SecProbRec19
         {
             services.AddControllersWithViews();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            services.AddEntityFrameworkSqlServer()
+                .AddDbContext<SecProbRec19Context>(options 
+                => options.UseSqlServer(Configuration.GetConnectionString("SecProbRec19Context")));
 
-            services.AddDbContext<SecProbRec19Context>(options =>
-                options.UseMySql(Configuration.GetConnectionString("SecProbRec19Context")));
-            
+            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+
+            //services.AddDbContext<SecProbRec19Context>(options =>
+            //    options.UseSqlServer(Configuration.GetConnectionString("SecProbRec19Context")));
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
