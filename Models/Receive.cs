@@ -10,6 +10,7 @@ namespace SecProbRec19.Models
         public int Id { get; set; }
         public int MailId { get; set; }
         public DateTime RecDate { get; set; } = DateTime.Now;
+        public string IpAddress { get; set; }
 
     }
 }

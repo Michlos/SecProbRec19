@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SecProbRec19.Data;
 
 namespace SecProbRec19.Migrations
 {
     [DbContext(typeof(SecProbRec19Context))]
-    partial class SecProbRec19ContextModelSnapshot : ModelSnapshot
+    [Migration("20231118042553_Adding ip Adreess")]
+    partial class AddingipAdreess
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

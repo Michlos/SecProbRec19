@@ -78,7 +78,8 @@ namespace SecProbRec19.Controllers
         {
             var newReceive = new Receive
             {
-                MailId = mailId
+                MailId = mailId,
+                IpAddress = HttpContext.Connection.RemoteIpAddress.ToString()
                 //RecDate = DateTime.Now  //pode ajustar a data confoem necessário com mask and typeString
             };
 
