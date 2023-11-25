@@ -76,11 +76,17 @@ namespace SecProbRec19.Controllers
         [HttpGet] //que doido é um get!!! by GPT
         public async Task<IActionResult> AutoCreate(int mailId)
         {
+            //var ipAddress = HttpContext.Connection.RemoteIpAddress;
+            DateTime thisTime = DateTime.Now;
+            var brazilTime = TimeZoneInfo.FindSystemTimeZoneById("E. South America Standard Time");
+
             var newReceive = new Receive
             {
                 MailId = mailId,
-                IpAddress = HttpContext.Connection.RemoteIpAddress.ToString()
-                //RecDate = DateTime.Now  //pode ajustar a data confoem necessário com mask and typeString
+                IpAddress = GetIpAdress.Client(),
+                RecDate = TimeZoneInfo.ConvertTime(DateTime.Now,
+                                                   TimeZoneInfo.Local,
+                                                   brazilTime)
             };
 
 
